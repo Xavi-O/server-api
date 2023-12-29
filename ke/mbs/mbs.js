@@ -23,7 +23,7 @@ const mombasa = (async () => {
         );
         const cluster = await Cluster.launch({
             concurrency: Cluster.CONCURRENCY_PAGE,
-            maxConcurrency: 10,
+            maxConcurrency: 2,
             args: chromium.args,
             defaultViewport: chromium.defaultViewport,
             executablePath: await chromium.executablePath(),
