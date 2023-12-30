@@ -11,7 +11,7 @@ for (let i = 0; i < cities.length; i++) {
     city;
 
     app.all('/kfc', (req, res) => {
-        res.send(nbo.product.concat( mbs.product ,nrk.product ))
+        res.send(nbo.product.concat(mbs.product, nrk.product))
     })
 
 
