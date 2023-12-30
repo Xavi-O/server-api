@@ -1,6 +1,7 @@
 const express = require('express')
 const { Cluster } = require('puppeteer-cluster');
 const fs = require('fs').promises;
+const app = express()
 
 let product = [];
 const mbs = (async () => {
@@ -13,7 +14,7 @@ const mbs = (async () => {
             concurrency: Cluster.CONCURRENCY_PAGE,
             maxConcurrency: 10,
             puppeteerOptions: {
-                headless: "new",
+                headless: false,
                 defaultViewport: null,
                 args: ["--force-device-scale-factor=0.5"],
             }
@@ -84,7 +85,5 @@ const mbs = (async () => {
         await cluster.close();
     }
 })();
-
-const app = express()
 
 module.exports = { mbs, product };

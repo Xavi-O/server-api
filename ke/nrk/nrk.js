@@ -1,6 +1,8 @@
 const express = require('express')
 const { Cluster } = require('puppeteer-cluster');
 const fs = require('fs').promises;
+const app = express()
+
 let product = [];
 const nrk = (async () => {
     let addresses = ["./ke/nrk/the-hub-karen.json", "./ke/nrk/maiyan-mall-rongai.json", "./ke/nrk/galleria-mall.json"];
@@ -12,7 +14,7 @@ const nrk = (async () => {
             concurrency: Cluster.CONCURRENCY_PAGE,
             maxConcurrency: 10,
             puppeteerOptions: {
-                headless: "new",
+                headless: false,
                 defaultViewport: null,
                 args: ["--force-device-scale-factor=0.5"],
             }
@@ -84,6 +86,4 @@ const nrk = (async () => {
 
     }
 })();
-const app = express()
-
 module.exports = { nrk, product };

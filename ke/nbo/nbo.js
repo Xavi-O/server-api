@@ -1,6 +1,8 @@
 const express = require('express')
 const { Cluster } = require('puppeteer-cluster');
 const fs = require('fs').promises;
+const app = express()
+
 let product = [];
 const nbo = (async () => {
     let addresses = ["./ke/nbo/hurlingham.json", "./ke/nbo/junction-mall.json", "./ke/nbo/shell-langata.json"];
@@ -12,7 +14,7 @@ const nbo = (async () => {
             concurrency: Cluster.CONCURRENCY_PAGE,
             maxConcurrency: 10,
             puppeteerOptions: {
-                headless: "new",
+                headless: false,
                 defaultViewport: null,
                 args: ["--force-device-scale-factor=0.5"],
             }
@@ -84,6 +86,5 @@ const nbo = (async () => {
 
     }
 })();
-const app = express()
 
 module.exports = { nbo, product };

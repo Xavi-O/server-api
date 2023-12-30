@@ -28,19 +28,19 @@ const fs = require('fs').promises;
     });
 
     //*********IMPORTANT**********Input the store address that brings the first true suggestion
-    await page.keyboard.type('Hurlingham');
+    await page.keyboard.type('The Junction Shopping Mall');
 
     await page.waitForTimeout(3000)
 
     await page.keyboard.press('Enter');
 
     await page.waitForTimeout(3000)
-    
+
     //Get cookies
     const cookies = await page.cookies()
 
     //*********IMPORTANT**********Save cookies to file
-    await fs.writeFile('../nbo/hurlingham.json', JSON.stringify(cookies, null, 2));
+    await fs.writeFile('../nbo/junction-mall.json', JSON.stringify(cookies, null, 2));
 
     console.log('Success!!!')
 
