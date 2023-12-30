@@ -82,12 +82,6 @@ const nrk = (async () => {
         });
 
         cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=Rice Bliss');
-        cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=Streetwise 2');
-        cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=Streetwise 3');
-        cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=Streetwise 5');
-        cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=Streetwise 7');
-        cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=KFC Krusher');
-        cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=Double Crunch Burger');
 
         // List of product search pages
 
