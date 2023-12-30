@@ -1,33 +1,21 @@
-const express = require('express');
+const express = require('express')
 const { Cluster } = require('puppeteer-cluster');
 const fs = require('fs').promises;
-const puppeteer = require("puppeteer-core");
-const chromium = require("@sparticuz/chromium");
-
-// Optional: If you'd like to use the legacy headless mode. "new" is the default.
-chromium.setHeadlessMode = "new";
-
-// Optional: If you'd like to disable webgl, true is the default.
-chromium.setGraphicsMode = false;
-
 let product = [];
 const nrk = (async () => {
     let addresses = ["./ke/nrk/the-hub-karen.json", "./ke/nrk/maiyan-mall-rongai.json", "./ke/nrk/galleria-mall.json"];
-    
+
     for (let i = 0; i < addresses.length; i++) {
         const address = addresses[i];
 
-        // Optional: Load any fonts you need. Open Sans is included by default in AWS Lambda instances
-        await chromium.font(
-            "https://raw.githack.com/googlei18n/noto-emoji/master/fonts/NotoColorEmoji.ttf"
-        );
         const cluster = await Cluster.launch({
             concurrency: Cluster.CONCURRENCY_PAGE,
             maxConcurrency: 10,
-            args: chromium.args,
-            defaultViewport: chromium.defaultViewport,
-            executablePath: await chromium.executablePath(),
-            headless: chromium.headless,
+            puppeteerOptions: {
+                headless: "new",
+                defaultViewport: null,
+                args: ["--force-device-scale-factor=0.5"],
+            }
         });
 
         await cluster.task(async ({ page, data: url }) => {
@@ -98,4 +86,4 @@ const nrk = (async () => {
 })();
 const app = express()
 
-module.exports = {nrk, product};
+module.exports = { nrk, product };
