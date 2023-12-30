@@ -49,11 +49,11 @@ for (let i = 0; i < cities.length; i++) {
 
     city;
 
-    app.all('/', (req, res) => {
+    app.all('/kfc', (req, res) => {
         res.send(mombasa.product.concat(nrk.product))
     })
 
 
 }
 
-app.listen(process.env.PORT || 3000, () => console.log(`Listening on port!`))
+app.listen(process.env.PORT || 5000, () => console.log(`Listening on port!`))
