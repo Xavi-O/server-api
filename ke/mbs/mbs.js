@@ -23,7 +23,7 @@ const mombasa = (async () => {
         );
         const cluster = await Cluster.launch({
             concurrency: Cluster.CONCURRENCY_PAGE,
-            maxConcurrency: 2,
+            maxConcurrency: 10,
             args: chromium.args,
             defaultViewport: chromium.defaultViewport,
             executablePath: await chromium.executablePath(),
@@ -82,6 +82,12 @@ const mombasa = (async () => {
         });
 
         cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Rice Bliss');
+        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 2');
+        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 3');
+        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 5');
+        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 7');
+        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=KFC Krusher');
+        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Double Crunch Burger');
 
         // List of product search pages
 
