@@ -10,7 +10,7 @@ const fs = require('fs').promises;
     const page = await browser.newPage();
 
     //*********IMPORTANT**********The url of the parent city
-    await page.goto('https://glovoapp.com/ke/en/ngong-rongai-karen/', {
+    await page.goto('https://glovoapp.com/ke/en/nairobi/', {
         waitUntil: "networkidle0",
     });
 
@@ -28,7 +28,7 @@ const fs = require('fs').promises;
     });
 
     //*********IMPORTANT**********Input the store address that brings the first true suggestion
-    await page.keyboard.type('Galleria Mall');
+    await page.keyboard.type('Hurlingham');
 
     await page.waitForTimeout(3000)
 
@@ -40,7 +40,7 @@ const fs = require('fs').promises;
     const cookies = await page.cookies()
 
     //*********IMPORTANT**********Save cookies to file
-    await fs.writeFile('../nrk/galleria-mall.json', JSON.stringify(cookies, null, 2));
+    await fs.writeFile('../nbo/hurlingham.json', JSON.stringify(cookies, null, 2));
 
     console.log('Success!!!')
 

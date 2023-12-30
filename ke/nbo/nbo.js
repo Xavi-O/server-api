@@ -1,10 +1,9 @@
 const express = require('express')
 const { Cluster } = require('puppeteer-cluster');
 const fs = require('fs').promises;
-
 let product = [];
-const mbs = (async () => {
-    let addresses = ["./ke/mbs/mbs-cbd.json", "./ke/mbs/nyali-rd.json"];
+const nbo = (async () => {
+    let addresses = ["./ke/nbo/hurlingham.json", "./ke/nbo/junction-mall.json", "./ke/nbo/shell-langata.json"];
 
     for (let i = 0; i < addresses.length; i++) {
         const address = addresses[i];
@@ -56,12 +55,12 @@ const mbs = (async () => {
                         (el => el.querySelector('.product-price__effective.product-price__effective--new-card')
                             .textContent, productHandle)
 
-                    product.push({ "city": "MBS", "address": location, "title": title, "price": price })
-                    //console.log({ "city": "MBS", "address": location, "title": title, "price": price })
+                    product.push({ "city": "NBO", "address": location, "title": title, "price": price })
+                    //console.log({ "city": "NBO", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "MBS", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "MBS", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "NBO", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                //console.log({ "city": "NBO", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
             await page.waitForNavigation({ waitUntil: 'networkidle0' });
@@ -70,21 +69,21 @@ const mbs = (async () => {
 
         });
 
-        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Rice Bliss');
-        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 2');
-        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 3');
-        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 5');
-        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Streetwise 7');
-        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=KFC Krusher');
-        cluster.queue('https://glovoapp.com/ke/en/mombasa/kfc-mombasa?search=Double Crunch Burger');
+        cluster.queue('https://glovoapp.com/ke/en/nairobi/kfc-nbo?search=Rice Bliss');
+        cluster.queue('https://glovoapp.com/ke/en/nairobi/kfc-nbo?search=Streetwise 2');
+        cluster.queue('https://glovoapp.com/ke/en/nairobi/kfc-nbo?search=Streetwise 3');
+        cluster.queue('https://glovoapp.com/ke/en/nairobi/kfc-nbo?search=Streetwise 5');
+        cluster.queue('https://glovoapp.com/ke/en/nairobi/kfc-nbo?search=Streetwise 7');
+        cluster.queue('https://glovoapp.com/ke/en/nairobi/kfc-nbo?search=KFC Krusher');
+        cluster.queue('https://glovoapp.com/ke/en/nairobi/kfc-nbo?search=Double Crunch Burger');
 
         // List of product search pages
 
         await cluster.idle();
         await cluster.close();
+
     }
 })();
-
 const app = express()
 
-module.exports = { mbs, product };
+module.exports = { nbo, product };
