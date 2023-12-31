@@ -28,7 +28,7 @@ const fs = require('fs').promises;
     });
 
     //*********IMPORTANT**********Input the store address that brings the first true suggestion
-    await page.keyboard.type('The Junction Shopping Mall');
+    await page.keyboard.type('KFC Mama Ngina');
 
     await page.waitForTimeout(3000)
 
@@ -40,7 +40,7 @@ const fs = require('fs').promises;
     const cookies = await page.cookies()
 
     //*********IMPORTANT**********Save cookies to file
-    await fs.writeFile('../nbo/junction-mall.json', JSON.stringify(cookies, null, 2));
+    await fs.writeFile('../nbo/mama-ngina.json', JSON.stringify(cookies, null, 2));
 
     console.log('Success!!!')
 
