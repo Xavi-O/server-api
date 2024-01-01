@@ -10,9 +10,9 @@ let product = [];
         "./kenya/nbo/hurlingham.json", "./kenya/nbo/junction-mall.json", "./kenya/nbo/shell-langata.json",
         "./kenya/nbo/lavington.json", './kenya/nbo/imara-daima.json', './kenya/nbo/woodvale.json',
         './kenya/nbo/buruburu.json', './kenya/nbo/waiyaki-way.json', './kenya/nbo/limuru-rd.json',
-        './kenya/nbo/kasarani.json', './kenya/nbo/kiambu-rd.json','./kenya/nbo/eastleigh.json', 
-        './kenya/nbo/kimathi-street.json','./kenya/nbo/southfield-mall.json','./kenya/nbo/garden-city.json',
-        './kenya/nbo/embakasi.json','./kenya/nbo/village-market.json','./kenya/nbo/westgate.json',
+        './kenya/nbo/kasarani.json', './kenya/nbo/kiambu-rd.json', './kenya/nbo/eastleigh.json',
+        './kenya/nbo/kimathi-street.json', './kenya/nbo/southfield-mall.json', './kenya/nbo/garden-city.json',
+        './kenya/nbo/embakasi.json', './kenya/nbo/village-market.json', './kenya/nbo/westgate.json',
         './kenya/nbo/northview.json', './kenya/nbo/mama-ngina.json'
     ];
     for (let i = 0; i < nboAddresses.length; i++) {
@@ -572,7 +572,7 @@ let product = [];
         await cluster.idle();
         await cluster.close();
     }
-    
+
 })();
 
 app.get('/kfc', function (req, res) {
