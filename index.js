@@ -650,7 +650,7 @@ let time = [];
     //Current time
     const date = Date()
     const easternTime = date.toLocaleString("en-US", { timeZone: "Africa/Nairobi", timeStyle: "short" });
-    time.push({easternTime})
+    time.push(easternTime)
     //console.log(easternTime)
 
 })();
