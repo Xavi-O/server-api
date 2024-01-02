@@ -1,10 +1,84 @@
 const express = require('express')
+const puppeteer = require('puppeteer');
 const { Cluster } = require('puppeteer-cluster');
 const fs = require('fs').promises;
 const app = express()
 
+let stores = [];
 let product = [];
+let time = [];
+
 (async () => {
+
+    //live status of various cities
+    let cities = ['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru', 'Eldoret', 'Syokimau', 'Ngong-Rongai-Karen', 'Kikuyu', 'Thika', 'Diani'];
+    for (let i = 0; i < cities.length; i++) {
+        const city = cities[i];
+
+        // Launch the browser and open a new blank page
+        const browser = await puppeteer.launch({
+            headless: "new",
+            defaultViewport: null,
+            args: ["--force-device-scale-factor=0.5"],
+        });
+        const page = await browser.newPage();
+
+        //Prevent from loading images, styles and fonts
+        await page.setRequestInterception(true);
+        page.on('request', (req) => {
+            if (req.resourceType() == 'stylesheet' || req.resourceType() == 'font' || req.resourceType() == 'image') {
+                req.abort();
+            }
+            else {
+                req.continue();
+            }
+        });
+
+        // Navigate the page to a URL
+        await page.goto('https://glovoapp.com/ke/en/' + `${city}` + '/restaurants_394/');
+
+        try {
+            let isBtnDisabled = false
+            while (!isBtnDisabled) {
+                await page.waitForSelector(".store-card")
+                const storeNames = await page.$$('.store-card');
+
+                for (const storeName of storeNames) {
+
+                    let title = "Null";
+                    let tag = "Open";
+
+                    try {
+                        title = await page.evaluate(
+                            (el) => el.querySelector(".store-card__footer__title").textContent, storeName
+                        );
+                    } catch (error) { }
+                    try {
+                        tag = await page.evaluate(
+                            (el) => el.querySelector(".store-card__long-text-prevention > div > div").textContent, storeName
+                        );
+                    } catch (error) { }
+
+                    stores.push({ "city": `${city}`, "storename": title, "storestatus": tag })
+
+                }
+                await page.waitForSelector('.next-page-link', { visible: true, timeout: 5000 })
+
+                const is_disabled = await page.$('.next-page-link--disabled') !== null;
+
+                isBtnDisabled = is_disabled
+
+                if (!is_disabled) {
+                    await page.click('.next-page-link')
+                    await page.waitForNavigation()
+                }
+            }
+            //console.log(stores.length)
+        } catch (error) { }
+
+        await browser.close();
+    }
+
     //Nairobi Addresses
     let nboAddresses = [
         "./kenya/nbo/hurlingham.json", "./kenya/nbo/junction-mall.json", "./kenya/nbo/shell-langata.json",
@@ -573,11 +647,27 @@ let product = [];
         await cluster.close();
     }
 
+    //Current time
+    const date = Date()
+    const easternTime = date.toLocaleString("en-US", { timeZone: "Africa/Nairobi", timeStyle: "short" });
+    time.push({easternTime})
+    //console.log(easternTime)
+
 })();
+
+app.get('/stores', function (req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores);
+})
 
 app.get('/kfc', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
     res.send(product);
+})
+
+app.get('/time', function (req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(time);
 })
 
 app.listen(process.env.PORT || 5000, () => console.log(`Listening on port!`))
