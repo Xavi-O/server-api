@@ -10,12 +10,6 @@ let time = [];
 
 (async () => {
 
-    //Current time
-    const date = Date()
-    const easternTime = date.toLocaleString("en-US", { timeZone: "Africa/Nairobi", timeStyle: "short" });
-    time.push(easternTime)
-    //console.log(easternTime)
-
     //live status of various cities
     let cities = ['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru', 'Eldoret', 'Syokimau', 'Ngong-Rongai-Karen', 'Kikuyu', 'Thika', 'Diani'];
     for (let i = 0; i < cities.length; i++) {
@@ -126,7 +120,7 @@ let time = [];
             const cookies = JSON.parse(cookiesString);
             await page.setCookie(...cookies);
 
-            await page.goto(url, { waitUntil: 'networkidle0' }); //Go to the search link of the first product
+            await page.goto(url, { waitUntil: 'domcontentloaded' }); //Go to the search link of the first product
 
             //Extract the title name of the product and its price
             try {
@@ -153,9 +147,9 @@ let time = [];
                 //console.log({ "city": "NBO", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
-            await page.waitForNavigation({ waitUntil: 'networkidle0' });
+            //await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-            await browser.close();
+            await page.close();
 
         });
 
@@ -206,7 +200,7 @@ let time = [];
             const cookies = JSON.parse(cookiesString);
             await page.setCookie(...cookies);
 
-            await page.goto(url, { waitUntil: 'networkidle0' }); //Go to the search link of the first product
+            await page.goto(url, { waitUntil: 'domcontentloaded' }); //Go to the search link of the first product
 
             //Extract the title name of the product and its price
             try {
@@ -233,9 +227,9 @@ let time = [];
                 //console.log({ "city": "MBS", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
-            await page.waitForNavigation({ waitUntil: 'networkidle0' });
+            //await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-            await browser.close();
+            await page.close();
 
         });
 
@@ -286,7 +280,7 @@ let time = [];
             const cookies = JSON.parse(cookiesString);
             await page.setCookie(...cookies);
 
-            await page.goto(url, { waitUntil: 'networkidle0' }); //Go to the search link of the first product
+            await page.goto(url, { waitUntil: "domcontentloaded" }); //Go to the search link of the first product
 
             //Extract the title name of the product and its price
             try {
@@ -313,9 +307,9 @@ let time = [];
                 //console.log({ "city": "NRK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
-            await page.waitForNavigation({ waitUntil: 'networkidle0' });
+            //await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-            await browser.close();
+            await page.close();
         });
 
         cluster.queue('https://glovoapp.com/ke/en/ngong-rongai-karen/kfc-nrk?search=Rice Bliss');
@@ -366,7 +360,7 @@ let time = [];
             const cookies = JSON.parse(cookiesString);
             await page.setCookie(...cookies);
 
-            await page.goto(url, { waitUntil: 'networkidle0' }); //Go to the search link of the first product
+            await page.goto(url, { waitUntil: 'domcontentloaded' }); //Go to the search link of the first product
 
             //Extract the title name of the product and its price
             try {
@@ -393,9 +387,9 @@ let time = [];
                 //console.log({ "city": "NAK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
-            await page.waitForNavigation({ waitUntil: 'networkidle0' });
+            //await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-            await browser.close();
+            await page.close();
 
         });
 
@@ -446,7 +440,7 @@ let time = [];
             const cookies = JSON.parse(cookiesString);
             await page.setCookie(...cookies);
 
-            await page.goto(url, { waitUntil: 'networkidle0' }); //Go to the search link of the first product
+            await page.goto(url, { waitUntil: 'domcontentloaded' }); //Go to the search link of the first product
 
             //Extract the title name of the product and its price
             try {
@@ -473,9 +467,9 @@ let time = [];
                 //console.log({ "city": "ELD", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
-            await page.waitForNavigation({ waitUntil: 'networkidle0' });
+            //await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-            await browser.close();
+            await page.close();
 
         });
 
@@ -526,7 +520,7 @@ let time = [];
             const cookies = JSON.parse(cookiesString);
             await page.setCookie(...cookies);
 
-            await page.goto(url, { waitUntil: 'networkidle0' }); //Go to the search link of the first product
+            await page.goto(url, { waitUntil: 'domcontentloaded' }); //Go to the search link of the first product
 
             //Extract the title name of the product and its price
             try {
@@ -553,9 +547,9 @@ let time = [];
                 //console.log({ "city": "KSM", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
-            await page.waitForNavigation({ waitUntil: 'networkidle0' });
+            //await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-            await browser.close();
+            await page.close();
 
         });
 
@@ -606,7 +600,7 @@ let time = [];
             const cookies = JSON.parse(cookiesString);
             await page.setCookie(...cookies);
 
-            await page.goto(url, { waitUntil: 'networkidle0' }); //Go to the search link of the first product
+            await page.goto(url, { waitUntil: 'domcontentloaded' }); //Go to the search link of the first product
 
             //Extract the title name of the product and its price
             try {
@@ -633,9 +627,9 @@ let time = [];
                 //console.log({ "city": "THK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
             }
 
-            await page.waitForNavigation({ waitUntil: 'networkidle0' });
+            //await page.waitForNavigation({ waitUntil: 'networkidle0' });
 
-            await browser.close();
+            await page.close();
 
         });
 
@@ -652,6 +646,12 @@ let time = [];
         await cluster.idle();
         await cluster.close();
     }
+    
+    //Current time
+    const date = Date()
+    const easternTime = date.toLocaleString("en-US", { timeZone: "Africa/Nairobi", timeStyle: "short" });
+    time.push(easternTime)
+    //console.log(easternTime)
 
 })();
 
