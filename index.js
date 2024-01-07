@@ -143,8 +143,8 @@ let time = [];
                     //console.log({ "city": "NBO", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "NBO", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "NBO", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "NBO", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
+                //console.log({ "city": "NBO", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
             }
 
             //await page.waitForNavigation({ waitUntil: 'networkidle0' });
@@ -223,8 +223,8 @@ let time = [];
                     //console.log({ "city": "MBS", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "MBS", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "MBS", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "MBS", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
+                //console.log({ "city": "MBS", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
             }
 
             //await page.waitForNavigation({ waitUntil: 'networkidle0' });
@@ -303,8 +303,8 @@ let time = [];
                     //console.log({ "city": "NRK", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "NRK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "NRK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "NRK", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
+                //console.log({ "city": "NRK", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
             }
 
             //await page.waitForNavigation({ waitUntil: 'networkidle0' });
@@ -383,8 +383,8 @@ let time = [];
                     //console.log({ "city": "NAK", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "NAK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "NAK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "NAK", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
+                //console.log({ "city": "NAK", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
             }
 
             //await page.waitForNavigation({ waitUntil: 'networkidle0' });
@@ -463,8 +463,8 @@ let time = [];
                     //console.log({ "city": "ELD", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "ELD", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "ELD", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "ELD", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
+                //console.log({ "city": "ELD", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
             }
 
             //await page.waitForNavigation({ waitUntil: 'networkidle0' });
@@ -543,8 +543,8 @@ let time = [];
                     //console.log({ "city": "KSM", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "KSM", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "KSM", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "KSM", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
+                //console.log({ "city": "KSM", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
             }
 
             //await page.waitForNavigation({ waitUntil: 'networkidle0' });
@@ -623,8 +623,8 @@ let time = [];
                     //console.log({ "city": "THK", "address": location, "title": title, "price": price })
                 }
             } catch (error) {
-                product.push({ "city": "THK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
-                //console.log({ "city": "THK", "address": location, "title": url.split("=").pop() + ' Not Found', "price": '-' });
+                product.push({ "city": "THK", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
+                //console.log({ "city": "THK", "address": location, "title": url.split("=").pop() + ' Missing', "price": '-' });
             }
 
             //await page.waitForNavigation({ waitUntil: 'networkidle0' });
