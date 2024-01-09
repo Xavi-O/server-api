@@ -655,11 +655,73 @@ let time = [];
 
 })();
 
+//All stores data
 app.get('/stores', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
     res.send(stores);
 })
 
+//Stores in Nairobi
+app.get('/stores/nairobi', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Nairobi"))
+  })
+
+//Stores in Mombasa
+app.get('/stores/mombasa', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Mombasa"))
+  })
+
+//Stores in Kisumu
+app.get('/stores/kisumu', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Kisumu"))
+  })
+
+//Stores in Nakuru
+app.get('/stores/nakuru', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Nakuru"))
+  })
+
+//Stores in Eldoret
+app.get('/stores/eldoret', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Eldoret"))
+  })
+
+//Stores in Syokimau
+app.get('/stores/syokimau', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Syokimau"))
+  })
+
+//Stores in Ngong-Rongai-Karen
+app.get('/stores/ngong-rongai-karen', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Ngong-Rongai-Karen"))
+  })
+
+//Stores in Kikuyu
+app.get('/stores/kikuyu', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Kikuyu"))
+  })
+
+//Stores in Thika
+app.get('/stores/thika', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Thika"))
+  })
+
+//Stores in Diani
+app.get('/stores/diani', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(stores.filter(row => row.city === "Diani"))
+  })
+
+  
 app.get('/kfc', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
     res.send(product);
