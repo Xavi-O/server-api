@@ -721,11 +721,24 @@ app.get('/stores/diani', (req, res) => {
     res.send(stores.filter(row => row.city === "Diani"))
   })
 
-  
+//All KFC Top products data  
 app.get('/kfc', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
     res.send(product);
 })
+
+//KFC active top products data  
+app.get('/kfc/active', function (req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(product.filter(row => row.price !== "-"));
+})
+
+//KFC active top products data  
+app.get('/kfc/inactive', function (req, res) {
+    res.set('Access-Control-Allow-Origin', '*');
+    res.send(product.filter(row => row.price === "-"));
+})
+
 
 app.get('/time', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
