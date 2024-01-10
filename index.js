@@ -658,85 +658,85 @@ let time = [];
 //All stores data
 app.get('/stores', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores);
+    res.send(JSON.stringify(stores).replace(/\\n/g, '').trim());
 })
 
 //Stores in Nairobi
 app.get('/stores/nairobi', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Nairobi"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Nairobi")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Mombasa
 app.get('/stores/mombasa', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Mombasa"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Mombasa")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Kisumu
 app.get('/stores/kisumu', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Kisumu"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Kisumu")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Nakuru
 app.get('/stores/nakuru', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Nakuru"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Nakuru")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Eldoret
 app.get('/stores/eldoret', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Eldoret"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Eldoret")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Syokimau
 app.get('/stores/syokimau', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Syokimau"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Syokimau")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Ngong-Rongai-Karen
 app.get('/stores/ngong-rongai-karen', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Ngong-Rongai-Karen"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Ngong-Rongai-Karen")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Kikuyu
 app.get('/stores/kikuyu', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Kikuyu"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Kikuyu")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Thika
 app.get('/stores/thika', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Thika"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Thika")).replace(/\\n/g, '').trim());
   })
 
 //Stores in Diani
 app.get('/stores/diani', (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(stores.filter(row => row.city === "Diani"))
+    res.send(JSON.stringify(stores.filter(row => row.city === "Diani")).replace(/\\n/g, '').trim());
   })
 
 //All KFC Top products data  
 app.get('/kfc', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(product);
+    res.send(JSON.stringify(product).replace(/\\n/g, '').trim());
 })
 
 //KFC active top products data  
 app.get('/kfc/active', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(product.filter(row => row.price !== "-"));
+    res.send(JSON.stringify(product.filter(row => row.price !== "-")).replace(/\\n/g, '').trim());
 })
 
 //KFC active top products data  
 app.get('/kfc/inactive', function (req, res) {
     res.set('Access-Control-Allow-Origin', '*');
-    res.send(product.filter(row => row.price === "-"));
+    res.send(JSON.stringify(product.filter(row => row.price === "-")).replace(/\\n/g, '').trim());
 })
 
 
