@@ -10,6 +10,12 @@ let time = [];
 
 (async () => {
 
+    //Current time
+    const date = Date()
+    const easternTime = date.toLocaleString("en-US", { timeZone: "Africa/Nairobi", timeStyle: "short" });
+    time.push(easternTime)
+    //console.log(easternTime)
+
     //live status of various cities
     let cities = ['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru', 'Eldoret', 'Syokimau', 'Ngong-Rongai-Karen', 'Kikuyu', 'Thika', 'Diani'];
     for (let i = 0; i < cities.length; i++) {
@@ -646,12 +652,6 @@ let time = [];
         await cluster.idle();
         await cluster.close();
     }
-    
-    //Current time
-    const date = Date()
-    const easternTime = date.toLocaleString("en-US", { timeZone: "Africa/Nairobi", timeStyle: "short" });
-    time.push(easternTime)
-    //console.log(easternTime)
 
 })();
 
