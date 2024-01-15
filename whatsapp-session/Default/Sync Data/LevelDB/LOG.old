@@ -1,3 +1,3 @@
-2024/01/14-10:49:26.265 868ca Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/Sync Data/LevelDB/MANIFEST-000001
-2024/01/14-10:49:26.266 868ca Recovering log #3
-2024/01/14-10:49:26.272 868ca Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/Sync Data/LevelDB/000003.log 
+2024/01/14-18:37:42.956 97ba6 Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/Sync Data/LevelDB/MANIFEST-000001
+2024/01/14-18:37:42.958 97ba6 Recovering log #3
+2024/01/14-18:37:42.958 97ba6 Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/Sync Data/LevelDB/000003.log 

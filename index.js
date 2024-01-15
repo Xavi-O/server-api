@@ -1051,7 +1051,7 @@ let time = [];
 
     await page.keyboard.press("Enter");
 
-    await timeout(20 * 1000);
+    await timeout(60 * 1000);
 
     //console.log(finalStr);
   } catch (error) {
