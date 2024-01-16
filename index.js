@@ -1031,19 +1031,20 @@ let time = [];
 
     await timeout(10 * 1000);
 
-    var initStr = JSON.stringify(
+    var missingItems = JSON.stringify(
       product.filter((row) => row.price === "-")
     ).replace(/\\n/g, "");
-    var secondStr = initStr
-      .substring(1, initStr.length - 1)
-      .replaceAll("},", "\n");
-    var thirdStr = secondStr.replaceAll("{", "");
-    var fourthStr = thirdStr.replaceAll("  ", "");
-    var fifthStr = fourthStr.replaceAll('"price":"-"', "");
-    var finalStr = fifthStr.replaceAll('"', " ");
+
+    var spacedItems = missingItems.replaceAll("  ", "");
+
+    var newJson = JSON.parse(spacedItems);
+
+    var missObj = newJson.map(
+      (o) => "\n" + o.title.concat(" at ", o.address, " in ", o.city)
+    );
 
     await page.keyboard.type(
-      "Hello, products missing at KFC stores as at " + easternTime + "\n" + finalStr,
+      "Hello, products missing at KFC stores as at " + easternTime + missObj,
       {
         waitUntil: "domcontentloaded",
       }
@@ -1053,7 +1054,7 @@ let time = [];
 
     await timeout(60 * 1000);
 
-    //console.log(finalStr);
+    //console.log(missObj);
   } catch (error) {
     //console.log(error);
   }
