@@ -1,3 +1,7 @@
-2024/01/16-19:56:38.084 4 Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/Local Storage/leveldb/MANIFEST-000001
-2024/01/16-19:56:38.087 4 Recovering log #16
-2024/01/16-19:56:38.087 4 Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/Local Storage/leveldb/000016.log 
+2024/01/19-13:08:54.802 4 Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/Local Storage/leveldb/MANIFEST-000001
+2024/01/19-13:08:54.807 4 Recovering log #20
+2024/01/19-13:08:54.809 4 Level-0 table #23: started
+2024/01/19-13:08:54.814 4 Level-0 table #23: 12218 bytes OK
+2024/01/19-13:08:54.814 4 Recovering log #23
+2024/01/19-13:08:54.815 4 Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/Local Storage/leveldb/000023.log 
+2024/01/19-13:08:54.820 4 Delete type=0 #20

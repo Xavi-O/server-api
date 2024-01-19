@@ -998,8 +998,8 @@ let time = [];
   let value = await page.evaluate((el) => el.textContent, element);
 
   console.log("Please Enter the code: " + value);
-*/
 
+*/
   try {
     await page.setRequestInterception(true);
     page.on("request", (req) => {
@@ -1018,15 +1018,17 @@ let time = [];
       visible: true,
       timeout: 0,
     });
+    function timeout(ms) {
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    }
 
-    const [linkHandler] = await page.$x("//span[contains(., '...')]");
+    const [linkHandler] = await page.$x("//span[contains(., '...')]", {
+      visible: true,
+      timeout: 0,
+    });
 
     if (linkHandler) {
       await linkHandler.click();
-    }
-
-    function timeout(ms) {
-      return new Promise((resolve) => setTimeout(resolve, ms));
     }
 
     await timeout(10 * 1000);
@@ -1170,7 +1172,7 @@ app.get("/stores/diani", (req, res) => {
 //All KFC Top products data
 app.get("/kfc", function (req, res) {
   res.set("Access-Control-Allow-Origin", "*");
-  res.send(JSON.stringify(product).replace(/\\n/g, "").trim());
+  res.send(JSON.stringify(product).replace(/\\n/g, ""));
 });
 
 //KFC active top products data
@@ -1179,7 +1181,6 @@ app.get("/kfc/active", function (req, res) {
   res.send(
     JSON.stringify(product.filter((row) => row.price !== "-"))
       .replace(/\\n/g, "")
-      .trim()
   );
 });
 
@@ -1189,7 +1190,6 @@ app.get("/kfc/inactive", function (req, res) {
   res.send(
     JSON.stringify(product.filter((row) => row.price === "-"))
       .replace(/\\n/g, "")
-      .trim()
   );
 });
 
