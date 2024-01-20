@@ -1,3 +1,3 @@
-2024/01/19-13:08:54.912 fec9 Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/shared_proto_db/MANIFEST-000001
-2024/01/19-13:08:54.912 fec9 Recovering log #3
-2024/01/19-13:08:54.915 fec9 Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/shared_proto_db/000003.log 
+2024/01/20-07:42:31.053 5463 Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/shared_proto_db/MANIFEST-000001
+2024/01/20-07:42:31.053 5463 Recovering log #3
+2024/01/20-07:42:31.056 5463 Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/shared_proto_db/000003.log 

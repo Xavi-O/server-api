@@ -1,37 +1,20 @@
-2024/01/19-15:10:17.447 1596b Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/19-15:10:17.455 1596b Recovering log #262
-2024/01/19-15:10:17.569 1596b Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000262.log 
-2024/01/19-15:10:40.521 15971 Level-0 table #272: started
-2024/01/19-15:10:40.650 15971 Level-0 table #272: 1169903 bytes OK
-2024/01/19-15:10:40.654 15971 Delete type=0 #262
-2024/01/19-15:10:41.124 1596c Compacting 1@1 + 5@2 files
-2024/01/19-15:10:41.341 1596c Generated table #273@1: 85555 keys, 2235142 bytes
-2024/01/19-15:10:41.469 1596c Generated table #274@1: 21971 keys, 2271264 bytes
-2024/01/19-15:10:41.578 1596c Generated table #275@1: 14651 keys, 2212170 bytes
-2024/01/19-15:10:41.762 1596c Generated table #276@1: 45139 keys, 2213310 bytes
-2024/01/19-15:10:42.027 1596c Generated table #277@1: 75951 keys, 1607597 bytes
-2024/01/19-15:10:42.027 1596c Compacted 1@1 + 5@2 files => 10539483 bytes
-2024/01/19-15:10:42.036 1596c compacted to: files[ 0 0 5 0 0 0 0 ]
-2024/01/19-15:11:44.648 15971 Level-0 table #279: started
-2024/01/19-15:11:44.698 15971 Level-0 table #279: 1288968 bytes OK
-2024/01/19-15:11:44.702 15971 Delete type=2 #268
-2024/01/19-15:11:44.702 15971 Delete type=2 #269
-2024/01/19-15:11:44.703 15971 Delete type=2 #267
-2024/01/19-15:11:44.703 15971 Delete type=2 #272
-2024/01/19-15:11:44.703 15971 Delete type=2 #265
-2024/01/19-15:11:44.703 15971 Delete type=2 #266
-2024/01/19-15:11:44.703 15971 Delete type=0 #271
-2024/01/19-15:11:44.707 15971 Compacting 1@1 + 5@2 files
-2024/01/19-15:11:44.814 15971 Generated table #280@1: 85977 keys, 2235905 bytes
-2024/01/19-15:11:44.886 15971 Generated table #281@1: 22202 keys, 2271423 bytes
-2024/01/19-15:11:44.969 15971 Generated table #282@1: 14643 keys, 2212366 bytes
-2024/01/19-15:11:45.074 15971 Generated table #283@1: 43561 keys, 2213010 bytes
-2024/01/19-15:11:45.196 15971 Generated table #284@1: 79029 keys, 1673004 bytes
-2024/01/19-15:11:45.196 15971 Compacted 1@1 + 5@2 files => 10605708 bytes
-2024/01/19-15:11:45.205 15971 compacted to: files[ 0 0 5 0 0 0 0 ]
-2024/01/19-15:11:45.205 15971 Delete type=2 #275
-2024/01/19-15:11:45.205 15971 Delete type=2 #276
-2024/01/19-15:11:45.205 15971 Delete type=2 #279
-2024/01/19-15:11:45.205 15971 Delete type=2 #274
-2024/01/19-15:11:45.206 15971 Delete type=2 #277
-2024/01/19-15:11:45.206 15971 Delete type=2 #273
+2024/01/20-09:12:08.992 a255 Reusing MANIFEST /home/xavi/Documents/server-api/whatsapp-session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/20-09:12:08.992 a255 Recovering log #286
+2024/01/20-09:12:09.060 a255 Reusing old log /home/xavi/Documents/server-api/whatsapp-session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000286.log 
+2024/01/20-09:12:22.948 a256 Level-0 table #295: started
+2024/01/20-09:12:22.995 a256 Level-0 table #295: 1362308 bytes OK
+2024/01/20-09:12:23.002 a256 Delete type=0 #286
+2024/01/20-09:12:24.588 a255 Compacting 1@1 + 5@2 files
+2024/01/20-09:12:24.743 a255 Generated table #296@1: 85726 keys, 2236144 bytes
+2024/01/20-09:12:24.843 a255 Generated table #297@1: 27828 keys, 2288237 bytes
+2024/01/20-09:12:24.926 a255 Generated table #298@1: 12363 keys, 2200502 bytes
+2024/01/20-09:12:25.034 a255 Generated table #299@1: 33181 keys, 2214443 bytes
+2024/01/20-09:12:25.153 a255 Generated table #300@1: 93581 keys, 1977414 bytes
+2024/01/20-09:12:25.153 a255 Compacted 1@1 + 5@2 files => 10916740 bytes
+2024/01/20-09:12:25.157 a255 compacted to: files[ 0 0 5 0 0 0 0 ]
+2024/01/20-09:12:25.158 a255 Delete type=2 #291
+2024/01/20-09:12:25.158 a255 Delete type=2 #292
+2024/01/20-09:12:25.158 a255 Delete type=2 #289
+2024/01/20-09:12:25.158 a255 Delete type=2 #290
+2024/01/20-09:12:25.158 a255 Delete type=2 #288
+2024/01/20-09:12:25.159 a255 Delete type=2 #295
